@@ -13,5 +13,51 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="CSV">
+      <UniqueIdentifier>{3aae5d51-e7c8-4543-9baf-504e70c5fa30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Task">
+      <UniqueIdentifier>{fe6e9e40-d9eb-40da-bba4-5e907c94191d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Task">
+      <UniqueIdentifier>{ca7da932-a52d-4f82-b6f6-ff931b9ecab6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Quest">
+      <UniqueIdentifier>{9c62246e-c505-4825-a452-83362bc478ed}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Task_Action.cpp">
+      <Filter>소스 파일\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="QuestManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="QuestSystem.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="csv\csv.h">
+      <Filter>CSV</Filter>
+    </ClInclude>
+    <ClInclude Include="Import_Resources_Define.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Task_Action.h">
+      <Filter>헤더 파일\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="QuestSystem.h">
+      <Filter>헤더 파일\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="QuestManager.h">
+      <Filter>헤더 파일\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="Task.h">
+      <Filter>헤더 파일\Task</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
