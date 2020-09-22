@@ -119,15 +119,18 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="QuestManager.cpp" />
     <ClCompile Include="QuestSystem.cpp" />
-    <ClCompile Include="Task_Action.cpp" />
+    <ClCompile Include="Task.cpp" />
+    <ClCompile Include="TaskAction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="csv\csv.h" />
     <ClInclude Include="Import_Resources_Define.h" />
+    <ClInclude Include="Observer.h" />
+    <ClInclude Include="TaskDefines.h" />
     <ClInclude Include="QuestManager.h" />
     <ClInclude Include="QuestSystem.h" />
     <ClInclude Include="Task.h" />
-    <ClInclude Include="Task_Action.h" />
+    <ClInclude Include="TaskAction.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

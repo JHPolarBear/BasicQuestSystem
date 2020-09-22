@@ -25,19 +25,25 @@
     <Filter Include="헤더 파일\Quest">
       <UniqueIdentifier>{9c62246e-c505-4825-a452-83362bc478ed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\Util">
+      <UniqueIdentifier>{9a0f0918-dcd7-403b-8b28-8067c734f35b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Task_Action.cpp">
-      <Filter>소스 파일\Task</Filter>
     </ClCompile>
     <ClCompile Include="QuestManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="QuestSystem.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Task.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskAction.cpp">
+      <Filter>소스 파일\Task</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -47,9 +53,6 @@
     <ClInclude Include="Import_Resources_Define.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Task_Action.h">
-      <Filter>헤더 파일\Task</Filter>
-    </ClInclude>
     <ClInclude Include="QuestSystem.h">
       <Filter>헤더 파일\Quest</Filter>
     </ClInclude>
@@ -58,6 +61,15 @@
     </ClInclude>
     <ClInclude Include="Task.h">
       <Filter>헤더 파일\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskDefines.h">
+      <Filter>헤더 파일\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskAction.h">
+      <Filter>헤더 파일\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>헤더 파일\Util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
