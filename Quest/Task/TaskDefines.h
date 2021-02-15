@@ -61,6 +61,22 @@ struct sTaskInfo
 	// Count to accomplish task
 	float		targetCount;
 
+	sTaskInfo()
+	{
+		desc = "";
+		actionType = TASK_ACTION_NONE;
+		target = TASK_TARGET_NONE;
+		targetCount = _TASK_COUNT_MAX;
+	}
+
+	sTaskInfo(int _actionType, int _target, float _count)
+	{
+		desc = "";
+		actionType = (TASK_ACTION)_actionType;
+		target = (TASK_TARGET)_target;
+		targetCount = _count;
+	}
+
 	sTaskInfo& operator =(const sTaskInfo &other)
 	{
 		desc = other.desc;

@@ -1,22 +1,22 @@
-#include "csv/csv.h"
-
 #include <iostream>
+#include <string>
+
+#include "Quest/QuestSystem.h"
 
 using namespace std;
 
+// Sample Program to show how quest system works
 int main()
 {
+	// Assume that main function act as 
+	CQuestSystem QuestSystem;
 
-	io::CSVReader<1> in("Quest_Node_Info.csv");
-	in.read_header(io::ignore_extra_column, "Q_ID");
-	int QN_ID; 
-	//float* vecNodeList; 
-	while (in.read_row(QN_ID))
-	{ 
-		cout << QN_ID << ","  << "\n";
-		// do stuff with the data 
-	} 
+	// Initialize QuestSystem;
+	QuestSystem.Initialize();
 
+	// Test - Print quest data table read form csv file
+	QuestSystem.PrintQuestDataTable();
+	
 	system("pause");
 
 	return 0;

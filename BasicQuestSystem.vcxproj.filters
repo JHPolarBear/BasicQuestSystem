@@ -16,9 +16,6 @@
     <Filter Include="CSV">
       <UniqueIdentifier>{3aae5d51-e7c8-4543-9baf-504e70c5fa30}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Task">
-      <UniqueIdentifier>{fe6e9e40-d9eb-40da-bba4-5e907c94191d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="헤더 파일\Task">
       <UniqueIdentifier>{ca7da932-a52d-4f82-b6f6-ff931b9ecab6}</UniqueIdentifier>
     </Filter>
@@ -28,22 +25,37 @@
     <Filter Include="헤더 파일\Util">
       <UniqueIdentifier>{9a0f0918-dcd7-403b-8b28-8067c734f35b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Quest">
+      <UniqueIdentifier>{9d50b6e4-74c3-4b78-987b-6770ae7d17d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Util">
+      <UniqueIdentifier>{3fa61546-d0b7-439a-879d-dd0dd7fa29c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Quest\Task">
+      <UniqueIdentifier>{fe6e9e40-d9eb-40da-bba4-5e907c94191d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="QuestManager.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="Quest\Task\Task.cpp">
+      <Filter>소스 파일\Quest\Task</Filter>
     </ClCompile>
-    <ClCompile Include="QuestSystem.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="Quest\Task\TaskAction.cpp">
+      <Filter>소스 파일\Quest\Task</Filter>
     </ClCompile>
-    <ClCompile Include="TaskAction.cpp">
-      <Filter>소스 파일\Task</Filter>
+    <ClCompile Include="Quest\Quest.cpp">
+      <Filter>소스 파일\Quest</Filter>
     </ClCompile>
-    <ClCompile Include="Task.cpp">
-      <Filter>소스 파일\Task</Filter>
+    <ClCompile Include="Quest\QuestManager.cpp">
+      <Filter>소스 파일\Quest</Filter>
+    </ClCompile>
+    <ClCompile Include="Quest\QuestSystem.cpp">
+      <Filter>소스 파일\Quest</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\StringUtility.cpp">
+      <Filter>소스 파일\Util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -53,23 +65,32 @@
     <ClInclude Include="Import_Resources_Define.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="QuestSystem.h">
-      <Filter>헤더 파일\Quest</Filter>
-    </ClInclude>
-    <ClInclude Include="QuestManager.h">
-      <Filter>헤더 파일\Quest</Filter>
-    </ClInclude>
-    <ClInclude Include="Task.h">
-      <Filter>헤더 파일\Task</Filter>
-    </ClInclude>
-    <ClInclude Include="TaskDefines.h">
-      <Filter>헤더 파일\Task</Filter>
-    </ClInclude>
-    <ClInclude Include="TaskAction.h">
-      <Filter>헤더 파일\Task</Filter>
-    </ClInclude>
     <ClInclude Include="Observer.h">
       <Filter>헤더 파일\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Quest\Quest.h">
+      <Filter>헤더 파일\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="Quest\Task\Task.h">
+      <Filter>헤더 파일\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Quest\Task\TaskAction.h">
+      <Filter>헤더 파일\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Quest\Task\TaskDefines.h">
+      <Filter>헤더 파일\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Quest\QuestManager.h">
+      <Filter>헤더 파일\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="Quest\QuestSystem.h">
+      <Filter>헤더 파일\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\StringUtility.h">
+      <Filter>헤더 파일\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Quest\QuestDefines.h">
+      <Filter>헤더 파일\Quest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

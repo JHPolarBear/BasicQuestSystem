@@ -85,6 +85,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -117,20 +118,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="QuestManager.cpp" />
-    <ClCompile Include="QuestSystem.cpp" />
-    <ClCompile Include="Task.cpp" />
-    <ClCompile Include="TaskAction.cpp" />
+    <ClCompile Include="Quest\Quest.cpp" />
+    <ClCompile Include="Quest\QuestManager.cpp" />
+    <ClCompile Include="Quest\QuestSystem.cpp" />
+    <ClCompile Include="Quest\Task\Task.cpp" />
+    <ClCompile Include="Quest\Task\TaskAction.cpp" />
+    <ClCompile Include="Util\StringUtility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="csv\csv.h" />
     <ClInclude Include="Import_Resources_Define.h" />
     <ClInclude Include="Observer.h" />
-    <ClInclude Include="TaskDefines.h" />
-    <ClInclude Include="QuestManager.h" />
-    <ClInclude Include="QuestSystem.h" />
-    <ClInclude Include="Task.h" />
-    <ClInclude Include="TaskAction.h" />
+    <ClInclude Include="Quest\Quest.h" />
+    <ClInclude Include="Quest\QuestDefines.h" />
+    <ClInclude Include="Quest\QuestManager.h" />
+    <ClInclude Include="Quest\QuestSystem.h" />
+    <ClInclude Include="Quest\Task\Task.h" />
+    <ClInclude Include="Quest\Task\TaskAction.h" />
+    <ClInclude Include="Quest\Task\TaskDefines.h" />
+    <ClInclude Include="Util\StringUtility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
