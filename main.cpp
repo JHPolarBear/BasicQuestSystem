@@ -7,8 +7,7 @@ using namespace std;
 int main()
 {
 
-	QuestSystem::
-	io::CSVReader<1>in("Quest_Node_Info.csv");
+	io::CSVReader<1> in("Quest_Node_Info.csv");
 	in.read_header(io::ignore_extra_column, "Q_ID");
 	int QN_ID; 
 	//float* vecNodeList; 

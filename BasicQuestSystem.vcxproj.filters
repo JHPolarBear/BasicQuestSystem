@@ -39,10 +39,10 @@
     <ClCompile Include="QuestSystem.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Task.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="TaskAction.cpp">
+      <Filter>소스 파일\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="Task.cpp">
       <Filter>소스 파일\Task</Filter>
     </ClCompile>
   </ItemGroup>
