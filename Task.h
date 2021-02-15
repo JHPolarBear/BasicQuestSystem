@@ -6,18 +6,23 @@ class Task
 {
 public:
 	Task();
+	Task(sTaskInfo _info, int id = -1);
 	virtual ~Task();
 
+
 	// Return whether task is done
-	bool Done()		{return m_State == TASK_STATE_DONE;}
+	bool IsDone()		{return state == TASK_STATE_DONE;}
+
 	void Update();
 
 private:
-	// Task Type
-	TASK_TYPE m_Type;
+	// Task ID
+	// id represent task's order written in quest_data.csv 
+	int id;
 
-	TASK_STATE m_State;
-
+	// Information about task action
+	sTaskInfo info;
 	
-
+	// state of task
+	TASK_STATE state;
 };
