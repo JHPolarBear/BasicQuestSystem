@@ -24,7 +24,7 @@ private:
 	std::string Title;
 
 	/** List of tasks to be accomplished to complete quest **/
-	std::vector<CTask> Vec_Tasks;
+	std::vector<sTaskData> Vec_TaskDatas;
 
 	/** List of Rewards given when quest is done **/
 	std::vector<sReward> Vec_Rewards;
@@ -50,8 +50,8 @@ public:
 	void			SetFollowQuestId(int _followId) { Follow_Quest_Id = _followId; }
 	int				GetFollowQuestId() { return Follow_Quest_Id; }
 
-	void				SetVecTasks(std::vector<CTask> _vec_tasks) { Vec_Tasks = _vec_tasks; }
-	std::vector<CTask>	GetVecTasks() { return Vec_Tasks; }
+	void				SetVecTaskDatas(std::vector<sTaskData> _vec_taskdatas) { Vec_TaskDatas = _vec_taskdatas; }
+	std::vector<sTaskData>	GetVecTaskDatas() { return Vec_TaskDatas; }
 
 	void					SetRewards(std::vector<sReward> _vec_rewards) { Vec_Rewards = _vec_rewards; }
 	std::vector<sReward>	GetRewards() { return Vec_Rewards; }

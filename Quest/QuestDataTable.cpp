@@ -23,13 +23,12 @@ void CQuestData::PrintQuestData()
 	cout << "[Quest ID: " << GetId() << " / Quest Title: " << GetTitle() << " ]" << endl;
 	cout << "[Precede Quest ID: " << GetPrecedeQuestId() << " / Follow Quest ID: " << GetFollowQuestId() << " ]" << endl;
 
-	std::vector<CTask> _vecTask = GetVecTasks();
-	for (int i = 0; i < _vecTask.size(); i++)
+	std::vector<sTaskData> _vecTaskData = GetVecTaskDatas();
+	for (int i = 0; i < _vecTaskData.size(); i++)
 	{
-		CTask _task = _vecTask[i];
-		sTaskInfo _info = _task.GetInfo();
-		cout << "[Task " << i << ": Task_ID: " << _task.GetId() << " / Task_Action: " << _info.actionType <<
-			" / Task_Target: " << _info.target << " / Task_Count: " << _info.targetCount << " / Task_State: " << _task.GetState() << " ]" << endl;
+		sTaskData _data = _vecTaskData[i];
+		cout << "[Task " << i << ": Task_Action: " << _data.action <<
+			" / Task_Target: " << _data.target << " / Task_Count: " << _data.targetCount << " ]" << endl;
 	}
 
 	std::vector<sReward> _vecReward = GetRewards();
@@ -135,17 +134,15 @@ bool CQuestDataTable::ReadDataTable()
 
 
 		// create task and save into the quest
-		vector<CTask> vecNewTasks;
+		vector<sTaskData> vecTaskDatas;
 
 		for (int i = 0; i < Vec_Task_Actions.size(); i++)
 		{
-			sTaskInfo NewTaskInfo(Vec_Task_Actions[i], Vec_Task_Targets[i], Vec_Task_Counts[i]);
+			sTaskData NewTaskData(Vec_Task_Actions[i], Vec_Task_Targets[i], Vec_Task_Counts[i]);
 
-			CTask NewTask(NewTaskInfo, i);
-
-			vecNewTasks.push_back(NewTask);
+			vecTaskDatas.push_back(NewTaskData);
 		}
-		NewQuestData.SetVecTasks(vecNewTasks);
+		NewQuestData.SetVecTaskDatas(vecTaskDatas);
 
 
 		// create reward list and save into quest

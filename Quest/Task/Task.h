@@ -16,9 +16,20 @@ private:
 	/** id는 CSV 파일에 적혀있는 task의 순서를 의미한다 **/
 	int Id;
 
-	/** Information about task action	**/
-	/** Task가 수행해야 하는 정보		**/
-	sTaskInfo Info;
+	// Task Description
+	std::string desc;
+
+	// Action Type
+	TASK_ACTION actionType;
+
+	// Target of Action
+	TASK_TARGET target;
+
+	// Count to accomplish task
+	float		targetCount;
+
+	// Player's current count
+	float		currentCount;
 
 	/** state of task **/
 	/** CTask의 상태 **/
@@ -26,7 +37,7 @@ private:
 
 public:
 	CTask();
-	CTask(sTaskInfo _info, int _id = -1);
+	CTask(int _id = -1, int _actType = 0, int _tgt = 0, int _tgtCnt = _TASK_COUNT_MAX);
 	virtual ~CTask();
 
 
@@ -41,8 +52,5 @@ public:
 	int			GetId()				{return Id;}
 
 	void		SetState(TASK_STATE _state)	{State = _state;}
-	TASK_STATE	GetState()					{return State;}
-
-	void		SetInfo(sTaskInfo _Info)	{Info = _Info;}
-	sTaskInfo	GetInfo()					{return Info;}
+	const TASK_STATE	GetState()					{return State;}
 };
