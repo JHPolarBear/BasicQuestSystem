@@ -57,6 +57,9 @@
     <ClCompile Include="Util\StringUtility.cpp">
       <Filter>소스 파일\Util</Filter>
     </ClCompile>
+    <ClCompile Include="Quest\QuestDataTable.cpp">
+      <Filter>소스 파일\Quest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="csv\csv.h">
@@ -90,6 +93,9 @@
       <Filter>헤더 파일\Util</Filter>
     </ClInclude>
     <ClInclude Include="Quest\QuestDefines.h">
+      <Filter>헤더 파일\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="Quest\QuestDataTable.h">
       <Filter>헤더 파일\Quest</Filter>
     </ClInclude>
   </ItemGroup>

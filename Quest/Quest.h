@@ -2,56 +2,25 @@
 
 #include <vector>
 
-#include "Task/Task.h"
 #include "QuestDefines.h"
+#include "QuestDataTable.h"
 
-class CQuest{
-
+/** Quest class used to handle actual player quest lists
+	Inherit CQuestData and add State value to control quest process **/
+/** 실제 플레이어가 수행중인 퀘스트를 관리하기 위한 클래스
+	CQuestData를 상속 받아 State 값을 추가하여 사용					**/
+class CQuest:public CQuestData
+{
 public:
 	CQuest();
 	virtual ~CQuest();
 
-	// Print Basic information about the quest itself
-	void PrintInfo();
-
 private:
-	/** Quest ID - Every Quest has unique ID **/
-	int Id;
-
-	/** Title of the quest **/
-	std::string Title;
-
-	/** List of tasks to be accomplished to complete quest **/
-	std::vector<CTask> Vec_Tasks;
-
-	/** List of Rewards given when quest is done **/
-	std::vector<sReward> Vec_Rewards;
-
-	/** Quest that must precede the current quest **/
-	int Precede_Quest_Id;
-
-	/** Quests that must follow the current quest **/
-	int Follow_Quest_Id;
-
+	
+	QUEST_STATE State;
 
 public:
 	/****	Getter && Setter	****/
-	void			SetId(int _id)					{Id = _id;}
-	int				GetId()							{return Id;}
-
-	void			SetTitle(std::string _title)	{Title = _title;}
-	std::string		GetTitle()						{return Title;}
-
-	void			SetPrecedeQuestId(int _precedId)	{Precede_Quest_Id = _precedId;}
-	int				GetPrecedeQuestId()					{return Precede_Quest_Id;}
-
-	void			SetFollowQuestId(int _followId)		{Follow_Quest_Id = _followId;}
-	int				GetFollowQuestId()					{return Follow_Quest_Id;}
-
-	void				SetVecTasks(std::vector<CTask> _vec_tasks)	{Vec_Tasks = _vec_tasks;}
-	std::vector<CTask>	GetVecTasks()								{return Vec_Tasks;}
-
-	void					SetRewards(std::vector<sReward> _vec_rewards)	{Vec_Rewards = _vec_rewards;}
-	std::vector<sReward>	GetRewards()									{return Vec_Rewards;}
-
+	void			SetState(QUEST_STATE _state)	{State = _state;}
+	QUEST_STATE		GetState()				{return State;}
 };

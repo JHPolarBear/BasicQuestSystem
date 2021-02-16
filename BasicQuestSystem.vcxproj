@@ -119,6 +119,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Quest\Quest.cpp" />
+    <ClCompile Include="Quest\QuestDataTable.cpp" />
     <ClCompile Include="Quest\QuestManager.cpp" />
     <ClCompile Include="Quest\QuestSystem.cpp" />
     <ClCompile Include="Quest\Task\Task.cpp" />
@@ -130,6 +131,7 @@
     <ClInclude Include="Import_Resources_Define.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="Quest\Quest.h" />
+    <ClInclude Include="Quest\QuestDataTable.h" />
     <ClInclude Include="Quest\QuestDefines.h" />
     <ClInclude Include="Quest\QuestManager.h" />
     <ClInclude Include="Quest\QuestSystem.h" />
