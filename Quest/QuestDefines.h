@@ -1,5 +1,7 @@
 #pragma once
 
+#define BASE_QUEST_DATASET "Quest/Quest_Table.csv"
+
 // structure for quest reward
 struct sReward
 {

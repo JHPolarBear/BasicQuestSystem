@@ -56,7 +56,7 @@ CQuestDataTable::~CQuestDataTable()
 bool CQuestDataTable::ReadDataTable()
 {
 	// <count> means number of columns in data table 
-	io::CSVReader<9> in("Quest/Quest_Table.csv");
+	io::CSVReader<9> in(BASE_QUEST_DATASET);
 
 	in.read_header(io::ignore_extra_column, "ID", "TITLE", "TASK_ACTS", "TASK_TGTS", "TASK_CNTS", \
 		"REWARD_IDS", "REWARD_CNTS", "PRECEDE_QID", "FOLLOW_QID");
