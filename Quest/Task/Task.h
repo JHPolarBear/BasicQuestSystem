@@ -12,27 +12,26 @@ class CTask
 {
 private:
 	/** Task ID
-		id represent task's order written in quest_data.csv **/
-	/** id는 CSV 파일에 적혀있는 task의 순서를 의미한다 **/
+		id represent task's order written in quest_data.csv
+		id는 CSV 파일에 적혀있는 task의 순서를 의미한다		**/
 	int Id;
 
-	// Task Description
+	/** Task Description **/
 	std::string desc;
 
-	// Action Type
+	/** Action Type **/
 	TASK_ACTION actionType;
 
-	// Target of Action
+	/** Target of Action	**/
 	TASK_TARGET target;
 
-	// Count to accomplish task
+	/** Count to accomplish task **/
 	float		targetCount;
 
-	// Player's current count
+	/**Player's current count **/
 	float		currentCount;
 
 	/** state of task **/
-	/** CTask의 상태 **/
 	TASK_STATE State;
 
 public:
