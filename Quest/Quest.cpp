@@ -6,7 +6,14 @@ using namespace std;
 
 CQuest::CQuest()
 {
-	CQuestData();
+	Id = 0;
+
+	Title = "";
+
+	Vec_Tasks.clear();
+
+	Precede_Quest_Id = 0;
+	Follow_Quest_Id = 0;
 
 	State = QUEST_STATE_NONE;
 }
