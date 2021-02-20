@@ -24,6 +24,9 @@ public:
 	/** Print Quest Data table read from csv file **/
 	/** CSV 파일에서 읽어들인 퀘스트 데이터 테이블 출력 **/
 	void PrintQuestDataTable();
+	
+	/**	Create CQuest with initial data using _id	**/
+	CQuest CreateQuest(int _id);
 
 
 private:

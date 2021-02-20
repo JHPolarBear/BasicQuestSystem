@@ -36,8 +36,7 @@ void CQuestManager::Initialize()
 CQuest CQuestManager::CreateQuest(int _id)
 {
 	CQuest quest;
-	return quest;
-	//return QuestDataTable.CreateQuest(_id);
+	return QuestDataTable.CreateQuest(_id);
 }
 
 // Print Quest Data table read from csv file
