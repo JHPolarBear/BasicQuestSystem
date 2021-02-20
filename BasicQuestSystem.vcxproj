@@ -131,7 +131,6 @@
     <ClInclude Include="CommonDefines.h" />
     <ClInclude Include="csv\csv.h" />
     <ClInclude Include="Import_Resources_Define.h" />
-    <ClInclude Include="Network\NetworkPacket.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="Player\Player.h" />
     <ClInclude Include="Quest\Quest.h" />

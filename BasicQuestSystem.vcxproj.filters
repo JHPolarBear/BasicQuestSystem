@@ -37,9 +37,6 @@
     <Filter Include="소스 파일\Player">
       <UniqueIdentifier>{170c5f0f-ba91-4805-a4d3-89542cb8559b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\Network">
-      <UniqueIdentifier>{90a4dded-5748-4e7c-9810-a84bc949c1e3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="헤더 파일\Player">
       <UniqueIdentifier>{c0b74327-db86-4805-a078-024981b90189}</UniqueIdentifier>
     </Filter>
@@ -121,9 +118,6 @@
     </ClInclude>
     <ClInclude Include="Quest\QuestDataTable.h">
       <Filter>헤더 파일\Quest</Filter>
-    </ClInclude>
-    <ClInclude Include="Network\NetworkPacket.h">
-      <Filter>헤더 파일\Network</Filter>
     </ClInclude>
     <ClInclude Include="CommonDefines.h">
       <Filter>헤더 파일</Filter>
