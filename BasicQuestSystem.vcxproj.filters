@@ -16,9 +16,6 @@
     <Filter Include="CSV">
       <UniqueIdentifier>{3aae5d51-e7c8-4543-9baf-504e70c5fa30}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\Task">
-      <UniqueIdentifier>{ca7da932-a52d-4f82-b6f6-ff931b9ecab6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="헤더 파일\Quest">
       <UniqueIdentifier>{9c62246e-c505-4825-a452-83362bc478ed}</UniqueIdentifier>
     </Filter>
@@ -33,6 +30,30 @@
     </Filter>
     <Filter Include="소스 파일\Quest\Task">
       <UniqueIdentifier>{fe6e9e40-d9eb-40da-bba4-5e907c94191d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Quest\Task">
+      <UniqueIdentifier>{ca7da932-a52d-4f82-b6f6-ff931b9ecab6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Player">
+      <UniqueIdentifier>{170c5f0f-ba91-4805-a4d3-89542cb8559b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Network">
+      <UniqueIdentifier>{90a4dded-5748-4e7c-9810-a84bc949c1e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Player">
+      <UniqueIdentifier>{c0b74327-db86-4805-a078-024981b90189}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Structure">
+      <UniqueIdentifier>{3d959cc0-3853-4332-9f5c-5be33ba42601}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Structure\EventListener">
+      <UniqueIdentifier>{9337c792-7fed-4e0e-b453-d562a1b9f841}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Structure">
+      <UniqueIdentifier>{a875a738-a15b-4682-95a3-b6c8b7b4dbe6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Structure\EventListener">
+      <UniqueIdentifier>{90ce56d2-12a4-4155-bc9e-7390c6fabc48}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +81,9 @@
     <ClCompile Include="Quest\QuestDataTable.cpp">
       <Filter>소스 파일\Quest</Filter>
     </ClCompile>
+    <ClCompile Include="Player\Player.cpp">
+      <Filter>소스 파일\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="csv\csv.h">
@@ -75,13 +99,13 @@
       <Filter>헤더 파일\Quest</Filter>
     </ClInclude>
     <ClInclude Include="Quest\Task\Task.h">
-      <Filter>헤더 파일\Task</Filter>
+      <Filter>헤더 파일\Quest\Task</Filter>
     </ClInclude>
     <ClInclude Include="Quest\Task\TaskAction.h">
-      <Filter>헤더 파일\Task</Filter>
+      <Filter>헤더 파일\Quest\Task</Filter>
     </ClInclude>
     <ClInclude Include="Quest\Task\TaskDefines.h">
-      <Filter>헤더 파일\Task</Filter>
+      <Filter>헤더 파일\Quest\Task</Filter>
     </ClInclude>
     <ClInclude Include="Quest\QuestManager.h">
       <Filter>헤더 파일\Quest</Filter>
@@ -97,6 +121,15 @@
     </ClInclude>
     <ClInclude Include="Quest\QuestDataTable.h">
       <Filter>헤더 파일\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\NetworkPacket.h">
+      <Filter>헤더 파일\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonDefines.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Player\Player.h">
+      <Filter>헤더 파일\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

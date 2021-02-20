@@ -25,6 +25,31 @@ void CQuestSystem::Initialize()
 	m_questManager->Initialize();
 }
 
+void CQuestSystem::RequestQuestList(int _usercode)
+{
+	if (!CheckManager())
+		return;
+
+	m_questManager->RequestQuestList(_usercode);
+}
+
+void CQuestSystem::ReceiveQuestList(/*char* pMsg*/)
+{
+	if (!CheckManager())
+		return;
+
+	m_questManager->ReceiveQuestList();
+}
+
+
+void CQuestSystem::SendUpdateQuest(int _usercode, int _qId)
+{
+	if (!CheckManager())
+		return;
+
+	m_questManager->SendUpdateQuest(_usercode, _qId);
+}
+
 void CQuestSystem::PrintQuestDataTable()
 {
 	if (!CheckManager())

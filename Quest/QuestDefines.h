@@ -2,6 +2,10 @@
 
 #define BASE_QUEST_DATASET "Quest/Quest_Table.csv"
 
+// Maximul count of quest player can hold
+// 플레이거가 가지고 있을 수 있는 최대 퀘스트 갯수
+#define MAX_QUEST_COUNT	25
+
 // structure for quest reward
 struct sReward
 {

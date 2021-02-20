@@ -3,7 +3,8 @@
 #include <map>
 
 #include "QuestDefines.h"
-#include "Task/Task.h"
+
+class CQuest;
 
 /** Class To save Quest Raw Information **/
 /** 퀘스트 정보를 저장하기 위한 클래스 **/
@@ -29,10 +30,12 @@ private:
 	/** List of Rewards given when quest is done **/
 	std::vector<sReward> Vec_Rewards;
 
-	/** Quest that must precede the current quest **/
+	/** Quest that must precede the current quest 
+		0 if precede quest not exists		**/			 
 	int Precede_Quest_Id;
 
-	/** Quests that must follow the current quest **/
+	/** Quests that must follow the current quest
+		0 if following quest not exists		**/			
 	int Follow_Quest_Id;
 
 
@@ -84,6 +87,8 @@ public:
 
 	// return CQuestData matched to qid
 	CQuestData GetQuestData(int _qid);
+
+	CQuest	CreateQuest(int _qid);
 
 	/**** Dev Option ****/
 	/**** 개발에 필요한 기능 ****/

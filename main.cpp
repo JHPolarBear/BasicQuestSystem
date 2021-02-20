@@ -14,8 +14,8 @@ int main()
 	// Initialize QuestSystem;
 	QuestSystem.Initialize();
 
-	// Test - Print quest data table read form csv file
-	QuestSystem.PrintQuestDataTable();
+	//	Test Code - Print quest data table read form csv file
+	//	QuestSystem.PrintQuestDataTable();
 	
 	system("pause");
 

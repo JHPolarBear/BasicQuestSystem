@@ -5,6 +5,8 @@
 #include "Quest.h"
 #include "QuestDataTable.h"
 
+#include "../CommonDefines.h"
+
 class CQuestManager
 {	
 public:
@@ -15,6 +17,21 @@ public:
 	/** Create Quest Data table initialize other values **/
 	/** 퀘스트 테이블 로드 및 변수 초기화 **/
 	void Initialize();
+
+	/*  Request/Receive player's quest list from server.
+	network functionality is not implemented,
+	but define functions to represent total process	*/
+	/*  네트워크 기능이 구현되어 있지는 않지만,
+		전체 프로세스를 표현하기 위해 정의함.	*/
+	void RequestQuestList(int _usercode);
+	void ReceiveQuestList(/*char* pMsg*/);
+
+	/**	send updated status of player's quest	**/
+	void SendUpdateQuest(int _usercode, int _qId);
+
+
+	/**	Create CQuest with initial data using _id	**/
+	CQuest CreateQuest(int _id);
 
 
 	/**** Dev Option ****/

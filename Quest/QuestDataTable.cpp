@@ -3,6 +3,8 @@
 #include "../csv/csv.h"
 
 #include "QuestDataTable.h"
+#include "Quest.h"
+
 #include "../Util/StringUtility.h"
 
 using namespace std;
@@ -178,6 +180,25 @@ CQuestData CQuestDataTable::GetQuestData(int _qid)
 		CQuestData _Dummy;
 		return _Dummy;
 	}
+}
+// Create CQuest with initial data using _id
+CQuest CQuestDataTable::CreateQuest(int _qid)
+{
+	CQuest quest;
+
+	CQuestData questData = GetQuestData(_qid);
+
+	// Copy quest base info if fine quest matched to _qid
+	if(questData.GetId() == _qid)
+	{
+		quest.SetId(questData.GetId());
+		quest.SetTitle(questData.GetTitle());
+
+		quest.SetPrecedeQuestId(questData.GetPrecedeQuestId());
+		quest.SetFollowQuestId(questData.GetFollowQuestId());
+	}
+
+	return quest;
 }
 
 void CQuestDataTable::PrintQuestDataTable()

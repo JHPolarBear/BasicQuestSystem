@@ -118,6 +118,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Player\Player.cpp" />
     <ClCompile Include="Quest\Quest.cpp" />
     <ClCompile Include="Quest\QuestDataTable.cpp" />
     <ClCompile Include="Quest\QuestManager.cpp" />
@@ -127,9 +128,12 @@
     <ClCompile Include="Util\StringUtility.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CommonDefines.h" />
     <ClInclude Include="csv\csv.h" />
     <ClInclude Include="Import_Resources_Define.h" />
+    <ClInclude Include="Network\NetworkPacket.h" />
     <ClInclude Include="Observer.h" />
+    <ClInclude Include="Player\Player.h" />
     <ClInclude Include="Quest\Quest.h" />
     <ClInclude Include="Quest\QuestDataTable.h" />
     <ClInclude Include="Quest\QuestDefines.h" />
