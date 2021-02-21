@@ -1,5 +1,7 @@
 #include "Task.h"
 
+using namespace std;
+
 CTask::CTask()
 {
 	Id = -1;
@@ -33,4 +35,29 @@ CTask::CTask(int _id, int _actType, int _tgt, int _tgtCnt)
 CTask::~CTask()
 {
 	
+}
+
+std::string CTask::GetStateString()
+{
+	string	strRes;
+
+	switch(State)
+	{
+	case TASK_STATE_DONE:
+		strRes = "Done";
+		break;
+	case TASK_STATE_PROCESS:
+		strRes = "In progress";
+		break;
+	case TASK_STATE_FAIL:
+		strRes = "Fail";
+		break;
+	case TASK_STATE_NONE:
+	case TASK_STATE_MAX:
+	default:
+		strRes = "Invalid State";
+		break;
+	}
+
+	return strRes;
 }

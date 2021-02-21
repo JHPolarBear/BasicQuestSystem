@@ -1,6 +1,7 @@
 #pragma once
 
-#define BASE_QUEST_DATASET "Quest/Quest_Table.csv"
+#define BASE_QUEST_DATASET	"Quest/Quest_Table.csv"
+#define SAVE_QUEST_DATA		"Player/Saved_Quest_Data.csv"
 
 // Maximul count of quest player can hold
 // 플레이거가 가지고 있을 수 있는 최대 퀘스트 갯수
@@ -41,6 +42,22 @@ struct sTaskData
 		target = _tgt;
 		targetCount = _tgtcnt;
 	}
+};
+
+
+// CSV data format for saved quest data
+struct sSavedQuestData {
+	int questId;
+	std::vector<int> vec_Task_Ids;
+	std::vector<float> vec_Task_Vals;
+
+	sSavedQuestData()
+	{
+		questId = 0;
+		vec_Task_Ids.clear();
+		vec_Task_Vals.clear();
+	}
+
 };
 
 enum QUEST_STATE

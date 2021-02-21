@@ -4,7 +4,6 @@
 
 #include "Task/Task.h"
 #include "QuestDefines.h"
-#include "QuestDataTable.h"
 
 /** Quest class used to handle actual player quest lists
 	Inherit CQuestData and add State value to control quest process **/
@@ -24,7 +23,11 @@ private:
 	/** Title of the quest **/
 	std::string Title;
 
+	/**	List of tasks that should be done to accomplish the quest**/
 	std::vector<CTask> Vec_Tasks;
+
+	/** List of Rewards given when quest is done **/
+	std::vector<sReward> Vec_Rewards;
 
 	/** Quest that must precede the current quest
 		0 if precede quest not exists		**/
@@ -55,4 +58,17 @@ public:
 
 	void			SetVecTasks(std::vector<CTask> _vec_tasks)	{Vec_Tasks = _vec_tasks;}
 	const std::vector<CTask>	GetVecTasks()					{return Vec_Tasks;}
+
+	void					SetRewards(std::vector<sReward> _vec_rewards) { Vec_Rewards = _vec_rewards; }
+	std::vector<sReward>	GetRewards() { return Vec_Rewards; }
+
+
+	/****	Function	****/
+
+	/**	Set saved value to quest tasks
+		Param vecSavedTaskVal: saved quest data previously performed by the player	**/
+	bool		RestoreSavedDatas(sSavedQuestData savdData);
+
+	/** Print quest information and status **/
+	void		PrintQuest();
 };

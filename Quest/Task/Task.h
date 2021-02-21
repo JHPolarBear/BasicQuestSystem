@@ -50,6 +50,22 @@ public:
 	void		SetId(int _id)		{Id = _id;}
 	int			GetId()				{return Id;}
 
-	void		SetState(TASK_STATE _state)	{State = _state;}
-	const TASK_STATE	GetState()					{return State;}
+	void			SetDesc(std::string _desc)	{desc = _desc;}
+	std::string		GetDesc()					{return desc;}
+
+	void			SetActionType(TASK_ACTION _actType)		{actionType = _actType;}
+	TASK_ACTION		GetActionType()							{return actionType;}
+
+	void			SetTarget(TASK_TARGET _tgt)				{target = _tgt;}
+	TASK_TARGET		GetTarget()								{return target;}
+
+	void			SetTargetCount(float _tgtCnt)			{targetCount = _tgtCnt;}
+	float			GetTargetCount()						{return targetCount;}
+
+	void			SetCurrentCount(float _cnt)				{currentCount = _cnt;}
+	float			GetCurrentCount()						{return currentCount;}
+
+	void			SetState(TASK_STATE _state)			{State = _state;}
+	TASK_STATE		GetState()							{return State;}
+	std::string		GetStateString();
 };

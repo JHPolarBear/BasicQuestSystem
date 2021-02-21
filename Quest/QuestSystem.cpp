@@ -25,12 +25,36 @@ void CQuestSystem::Initialize()
 	m_questManager->Initialize();
 }
 
+bool CQuestSystem::LoadLocalSavedData()
+{
+	if (!CheckManager())
+		return false;
+
+	m_questManager->LoadLocalSavedData();
+}
+
+bool CQuestSystem::SetPlayer(CPlayer* player)
+{
+	if (!CheckManager())
+		return false;
+
+	m_questManager->SetPlayer(player);
+}
+
 void CQuestSystem::PrintQuestDataTable()
 {
 	if (!CheckManager())
 		return;
 
 	m_questManager->PrintQuestDataTable();
+}
+
+void CQuestSystem::PrintQuestList()
+{
+	if (!CheckManager())
+		return;
+
+	m_questManager->PrintQuestList();
 }
 
 bool CQuestSystem::CheckManager()

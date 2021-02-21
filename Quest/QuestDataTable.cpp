@@ -5,7 +5,7 @@
 #include "QuestDataTable.h"
 #include "Quest.h"
 
-#include "../Util/StringUtility.h"
+#include "../CommonDefines.h"
 
 using namespace std;
 
@@ -196,6 +196,22 @@ CQuest CQuestDataTable::CreateQuest(int _qid)
 
 		quest.SetPrecedeQuestId(questData.GetPrecedeQuestId());
 		quest.SetFollowQuestId(questData.GetFollowQuestId());
+
+		quest.SetRewards(questData.GetRewards());
+
+		//Create Task list from base task data saved in quest Data Table
+		vector<CTask> vecQuestTasks;
+
+		vector<sTaskData> vecTaskData = questData.GetVecTaskDatas();
+		for(int i=0; i< vecTaskData.size(); i++)
+		{
+			// Task id starts from 1 -> set id with i+1
+			CTask task(i+1, vecTaskData[i].action, vecTaskData[i].target, vecTaskData[i].targetCount );
+
+			vecQuestTasks.push_back(task);
+		}
+
+		quest.SetVecTasks(vecQuestTasks);
 	}
 
 	return quest;
