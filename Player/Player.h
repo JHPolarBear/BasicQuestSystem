@@ -15,7 +15,7 @@ private:
 	int UserCode;
 
 	/* Manage player quest list*/
-	CQuestSystem QuestSystem;
+	static CQuestSystem* QuestSystem;
 
 public:
 	/****	Getter && Setter	****/
