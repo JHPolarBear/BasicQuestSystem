@@ -13,6 +13,9 @@ CPlayer::CPlayer()
 
 	// Save self pointer to Quest system
 	QuestSystem->SetPlayer(this);
+
+	// Add QuestSyem to event listener itself
+	Register(QuestSystem);
 }
 
 CPlayer::CPlayer(int _usercode)
@@ -27,6 +30,9 @@ CPlayer::CPlayer(int _usercode)
 	UserCode = _usercode;
 
 	QuestSystem->SetPlayer(this);
+
+	// Add QuestSyem to event listener itself
+	Register(QuestSystem);
 }
 
 CPlayer::~CPlayer()

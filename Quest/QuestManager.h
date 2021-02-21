@@ -5,6 +5,8 @@
 #include "Quest.h"
 #include "QuestDataTable.h"
 
+#include "../CommonDefines.h"
+
 class CPlayer;
 
 class CQuestManager
@@ -23,6 +25,9 @@ public:
 
 	/**	Create CQuest with initial data using _id	**/
 	CQuest CreateQuest(int _id);
+
+	/**	Update quest **/
+	void UpdateQuest(E_EVENT_LISTENER_TYPE etype, sEventListener_Info sInfo);
 	
 	
 	/**** Dev Option ****/

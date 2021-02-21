@@ -1,8 +1,9 @@
 #pragma once
 
 #include "QuestManager.h"
+#include "../CommonDefines.h"
 
-class CQuestSystem
+class CQuestSystem : public Observer
 {
 private:
 	class CQuestManager* m_questManager;
@@ -31,6 +32,9 @@ public:
 	/** Display the list of quests player currently have **/
 	/**	현재 보유하고 있는 퀘스트 목록 출력**/
 	void PrintQuestList();
+
+	/** Observer class override **/
+	void onNotify(E_EVENT_LISTENER_TYPE etype, sEventListener_Info sInfo) override;
 
 private:
 

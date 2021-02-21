@@ -125,13 +125,14 @@
     <ClCompile Include="Quest\QuestSystem.cpp" />
     <ClCompile Include="Quest\Task\Task.cpp" />
     <ClCompile Include="Quest\Task\TaskAction.cpp" />
+    <ClCompile Include="Structures\EventListener\Observer\Observer.cpp" />
+    <ClCompile Include="Structures\EventListener\Subject\Subject.cpp" />
     <ClCompile Include="Util\StringUtility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommonDefines.h" />
     <ClInclude Include="csv\csv.h" />
     <ClInclude Include="Import_Resources_Define.h" />
-    <ClInclude Include="Observer.h" />
     <ClInclude Include="Player\Player.h" />
     <ClInclude Include="Quest\Quest.h" />
     <ClInclude Include="Quest\QuestDataTable.h" />
@@ -141,6 +142,9 @@
     <ClInclude Include="Quest\Task\Task.h" />
     <ClInclude Include="Quest\Task\TaskAction.h" />
     <ClInclude Include="Quest\Task\TaskDefines.h" />
+    <ClInclude Include="Structures\EventListener\EventLitener_Defines.h" />
+    <ClInclude Include="Structures\EventListener\Observer\Observer.h" />
+    <ClInclude Include="Structures\EventListener\Subject\Subject.h" />
     <ClInclude Include="Util\StringUtility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

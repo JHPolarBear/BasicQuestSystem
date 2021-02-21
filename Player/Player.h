@@ -2,7 +2,10 @@
 
 #include "../Quest/QuestSystem.h"
 
-class CPlayer{
+#include "../CommonDefines.h"
+
+class CPlayer : public Subject
+{
 public:
 
 	CPlayer();

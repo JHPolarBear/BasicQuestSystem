@@ -81,6 +81,12 @@
     <ClCompile Include="Player\Player.cpp">
       <Filter>소스 파일\Player</Filter>
     </ClCompile>
+    <ClCompile Include="Structures\EventListener\Observer\Observer.cpp">
+      <Filter>소스 파일\Structure\EventListener</Filter>
+    </ClCompile>
+    <ClCompile Include="Structures\EventListener\Subject\Subject.cpp">
+      <Filter>소스 파일\Structure\EventListener</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="csv\csv.h">
@@ -88,9 +94,6 @@
     </ClInclude>
     <ClInclude Include="Import_Resources_Define.h">
       <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Observer.h">
-      <Filter>헤더 파일\Util</Filter>
     </ClInclude>
     <ClInclude Include="Quest\Quest.h">
       <Filter>헤더 파일\Quest</Filter>
@@ -124,6 +127,15 @@
     </ClInclude>
     <ClInclude Include="Player\Player.h">
       <Filter>헤더 파일\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\EventListener\Subject\Subject.h">
+      <Filter>헤더 파일\Structure\EventListener</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\EventListener\Observer\Observer.h">
+      <Filter>헤더 파일\Structure\EventListener</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\EventListener\EventLitener_Defines.h">
+      <Filter>헤더 파일\Structure\EventListener</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

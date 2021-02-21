@@ -57,6 +57,14 @@ void CQuestSystem::PrintQuestList()
 	m_questManager->PrintQuestList();
 }
 
+void CQuestSystem::onNotify(E_EVENT_LISTENER_TYPE etype, sEventListener_Info sInfo)
+{
+	if (!CheckManager())
+		return;
+
+	m_questManager->UpdateQuest(etype,  sInfo);
+}
+
 bool CQuestSystem::CheckManager()
 {
 	// print error message and return false if the manager is not exists

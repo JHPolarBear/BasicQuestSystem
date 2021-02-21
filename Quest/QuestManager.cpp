@@ -75,6 +75,11 @@ CQuest CQuestManager::CreateQuest(int _id)
 	return QuestDataTable.CreateQuest(_id);
 }
 
+void CQuestManager::UpdateQuest(E_EVENT_LISTENER_TYPE etype, sEventListener_Info sInfo)
+{
+
+}
+
 // Print Quest Data table read from csv file
 // CSV 파일에서 읽어들인 퀘스트 데이터 테이블 출력
 void CQuestManager::PrintQuestDataTable()

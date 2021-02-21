@@ -21,7 +21,11 @@ int main()
 	player.LoadLocalSavedData();
 
 	//	Test Code - Print quest list player load
-	player.PrintQuestList();
+	//	player.PrintQuestList();
+
+	//	Sample code - player notify event to all listener using notify function ( i.e) QuestSystem )
+	sEventListener_Info sInfo;
+	player.Notify(E_EVENT_LISTENER_PLAYER_HUNT, sInfo);
 	
 	system("pause");
 
