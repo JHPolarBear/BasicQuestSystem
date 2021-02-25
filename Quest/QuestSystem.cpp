@@ -30,7 +30,15 @@ bool CQuestSystem::LoadLocalSavedData()
 	if (!CheckManager())
 		return false;
 
-	m_questManager->LoadLocalSavedData();
+	return m_questManager->LoadLocalSavedData();
+}
+
+E_ASSIGN_QUEST CQuestSystem::AssignQuest(int _qid)
+{
+	if (!CheckManager())
+		return E_ASSIGN_QUEST::FAIL_FIND_MANAGER;
+
+	return m_questManager->AssignQuest(_qid);
 }
 
 bool CQuestSystem::SetPlayer(CPlayer* player)
@@ -38,7 +46,7 @@ bool CQuestSystem::SetPlayer(CPlayer* player)
 	if (!CheckManager())
 		return false;
 
-	m_questManager->SetPlayer(player);
+	return m_questManager->SetPlayer(player);
 }
 
 void CQuestSystem::PrintQuestDataTable()
@@ -70,7 +78,7 @@ bool CQuestSystem::CheckManager()
 	// print error message and return false if the manager is not exists
 	if(!m_questManager)
 	{
-		cout << "[" __FUNCTION__ << "] Quest manager not exists" << endl;
+		FUNC_LOG("Quest manager not exists");
 		return false;
 	}
 

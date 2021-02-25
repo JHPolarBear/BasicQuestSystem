@@ -22,12 +22,18 @@ public:
 
 	/**	Load player's local saved quest data **/
 	bool LoadLocalSavedData();
-
+	
 	/**	Create CQuest with initial data using _id	**/
 	CQuest CreateQuest(int _id);
 
+	/** Create new quest and assign to manager	**/
+	E_ASSIGN_QUEST AssignQuest(int _id);
+
 	/**	Update quest **/
 	void UpdateQuest(E_EVENT_LISTENER_TYPE etype, sEventListener_Info sInfo);
+
+	/** return true if player have quest with id '_id' **/
+	bool IsQuestExist(int _id);
 	
 	
 	/**** Dev Option ****/
@@ -62,5 +68,5 @@ private:
 	/****	Sample Specified Variable	****/
 	/**	Save player class to user property from the player **/
 	CPlayer* Parent;
-	
+		
 };

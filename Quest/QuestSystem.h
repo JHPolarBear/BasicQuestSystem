@@ -18,6 +18,8 @@ public:
 	/**	Load player's local saved quest data **/
 	bool LoadLocalSavedData();
 
+	E_ASSIGN_QUEST AssignQuest(int _qid);
+
 
 	/****	Sample Specified Function	****/
 	/**	Save player class to user property from the player **/

@@ -50,6 +50,11 @@ bool CPlayer::LoadLocalSavedData()
 	return result;
 }
 
+E_ASSIGN_QUEST CPlayer::AssignQuest(int _qid)
+{
+	return QuestSystem->AssignQuest(_qid);
+}
+
 void CPlayer::PrintQuestList()
 {
 	QuestSystem->PrintQuestList();

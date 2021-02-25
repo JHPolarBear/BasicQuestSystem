@@ -20,6 +20,9 @@ int main()
 	//	Load local save file from csv
 	player.LoadLocalSavedData();
 
+	// Sample code - assign new quest to player
+	player.AssignQuest(103);
+
 	//	Test Code - Print quest list player load
 	//	player.PrintQuestList();
 

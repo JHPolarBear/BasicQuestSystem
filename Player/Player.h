@@ -28,6 +28,12 @@ public:
 	/**	Load player's local saved data **/
 	bool LoadLocalSavedData();
 
+	/**	assign quest with Quest ID(_qid) to player**/
+	E_ASSIGN_QUEST AssignQuest(int _qid);
+
+	/**** Dev Option ****/
+
+	/**	Print player's quest list	**/
 	void PrintQuestList();
 
 };

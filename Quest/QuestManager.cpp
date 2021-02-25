@@ -28,7 +28,7 @@ void CQuestManager::Initialize()
 	//Create QuestDataTable and read the table from csv
 	if (QuestDataTable.ReadDataTable() == false)
 	{
-		cout << "[" << __FUNCTION__ << "] Failed to Read Data Table" << endl;
+		FUNC_LOG("Failed to Read Data Table");
 	}
 
 	Vec_Quests.clear();
@@ -41,7 +41,7 @@ bool CQuestManager::LoadLocalSavedData()
 	//Read Saved File
 	if(ReadSavedFile(vecQuestDataList) == false)
 	{
-		cout << __FUNCTION__ << "Failed to Read Save File" << endl;
+		FUNC_LOG("Failed to Read Save File");
 		return false;
 	}
 
@@ -53,7 +53,7 @@ bool CQuestManager::LoadLocalSavedData()
 		CQuest quest = CreateQuest(vecQuestDataList[i].questId);
 
 		// Check valid quest id
-		if(quest.GetId() != 0)
+		if(quest.GetId() != INVALID_QUEST_ID)
 		{		
 			// Restor saved data
 			bLoad = quest.RestoreSavedDatas(vecQuestDataList[i]);
@@ -75,9 +75,50 @@ CQuest CQuestManager::CreateQuest(int _id)
 	return QuestDataTable.CreateQuest(_id);
 }
 
+E_ASSIGN_QUEST CQuestManager::AssignQuest(int _id)
+{
+	// Check if player already have the same quest.
+	if(IsQuestExist(_id) == true)
+	{
+		FUNC_LOG("Quest id %d is already exists", _id);
+		return E_ASSIGN_QUEST::ALREAD_EXIST;
+	}
+
+	CQuest newQuest = CreateQuest(_id);
+
+	if(newQuest.GetId() == INVALID_QUEST_ID)
+	{
+		FUNC_LOG("Faild to create Quest %d", _id);
+		return E_ASSIGN_QUEST::FAIL_ON_CREATION;
+	}
+
+	// Change quest state in progress
+	newQuest.SetState(QUEST_STATE_PROCESS);
+
+	Vec_Quests.push_back(newQuest);
+
+	return E_ASSIGN_QUEST::SUCCESS;
+}
+
 void CQuestManager::UpdateQuest(E_EVENT_LISTENER_TYPE etype, sEventListener_Info sInfo)
 {
 
+}
+
+bool CQuestManager::IsQuestExist(int _id)
+{
+	bool bFind = false;
+
+	for(int i=0; i< Vec_Quests.size(); i++)
+	{
+		if (Vec_Quests[i].GetId() == _id)
+		{
+			bFind = true;
+			break;
+		}
+	}
+
+	return bFind;
 }
 
 // Print Quest Data table read from csv file
@@ -101,8 +142,11 @@ void CQuestManager::PrintQuestList()
 /**	Save player class to user property from the player **/
 bool CQuestManager::SetPlayer(CPlayer* player)
 {
-	if(player == nullptr)
-		cout << __FUNCTION__ << " Player not exists" << endl ;
+	if (player == nullptr)
+	{
+		FUNC_LOG(" Player not exists");
+		return false;
+	}
 	else
 	{
 		Parent = player;
@@ -150,7 +194,7 @@ bool CQuestManager::ReadSavedFile(std::vector<sSavedQuestData>& vecQuestDataList
 		// Check both size of Task_Ids and Task_Vals are equal
 		if(Vec_Task_Ids.size() != Vec_Task_Vals.size())
 		{
-			cout << __FUNCTION__ << " Failed To Create Quest Data: Task size mismatch" << endl;
+			FUNC_LOG(" Failed To Create Quest Data: Task size mismatch");
 			continue;
 		}
 

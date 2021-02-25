@@ -8,7 +8,7 @@ using namespace std;
 
 CQuest::CQuest()
 {
-	Id = 0;
+	Id = INVALID_QUEST_ID;
 
 	Title = "";
 
@@ -31,7 +31,7 @@ bool CQuest::RestoreSavedDatas(sSavedQuestData saveData)
 {
 	if (saveData.vec_Task_Ids.size() != Vec_Tasks.size())
 	{
-		FILE_LOG("Save data's task size not matched with Vec_Task");
+		EXT_LOG("Save data's task size not matched with Vec_Task");
 		return false;
 	}
 

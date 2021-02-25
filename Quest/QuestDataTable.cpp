@@ -123,14 +123,14 @@ bool CQuestDataTable::ReadDataTable()
 		// Check if all elements of the task are the same size
 		if (Vec_Task_Actions.size() != Vec_Task_Counts.size() || Vec_Task_Actions.size() != Vec_Task_Targets.size())
 		{
-			cout << __FUNCTION__ << "Quest Id: " << quest_id << "Task information Size not match" << endl;
+			FUNC_LOG("Quest Id: %d Task information Size not match", quest_id);
 			continue;
 		}
 
 		// Check if all elements of the reward are the same size
 		if (Vec_Reward_Ids.size() != Vec_Reward_Counts.size())
 		{
-			cout << __FUNCTION__ << "Quest Id: " << quest_id << "Reward information Size not match" << endl;
+			FUNC_LOG("Quest Id: %d Reward information Size not match", quest_id);
 			continue;
 		}
 

@@ -7,6 +7,9 @@
 // 플레이거가 가지고 있을 수 있는 최대 퀘스트 갯수
 #define MAX_QUEST_COUNT	25
 
+// Invalid Quest ID ( used to initialiaze CQuest information)
+#define INVALID_QUEST_ID	0
+
 // structure for quest reward
 struct sReward
 {
@@ -69,4 +72,16 @@ enum QUEST_STATE
 	QUEST_STATE_FAIL,
 
 	QUEST_STATE_MAX,
+};
+
+enum class E_ASSIGN_QUEST
+{
+	NONE,
+
+	SUCCESS,				// success create quest
+	ALREAD_EXIST,				// same quest already exists
+	FAIL_ON_CREATION,			// failed on CQuest creation
+	FAIL_FIND_MANAGER,		// failed to access quest manager
+
+	MAX,
 };
