@@ -37,7 +37,7 @@ private:
 		0 if following quest not exists		**/
 	int Follow_Quest_Id;
 	
-	QUEST_STATE State;
+	E_QUEST_STATE State;
 
 public:
 	/****	Getter && Setter	****/
@@ -53,8 +53,8 @@ public:
 	void			SetFollowQuestId(int _followId) { Follow_Quest_Id = _followId; }
 	int				GetFollowQuestId() { return Follow_Quest_Id; }
 
-	void			SetState(QUEST_STATE _state)	{State = _state;}
-	QUEST_STATE		GetState()				{return State;}
+	void			SetState(E_QUEST_STATE _state)	{State = _state;}
+	E_QUEST_STATE		GetState()				{return State;}
 
 	void			SetVecTasks(std::vector<CTask> _vec_tasks)	{Vec_Tasks = _vec_tasks;}
 	const std::vector<CTask>	GetVecTasks()					{return Vec_Tasks;}
@@ -67,8 +67,16 @@ public:
 
 	/**	Set saved value to quest tasks
 		Param vecSavedTaskVal: saved quest data previously performed by the player	**/
-	bool		RestoreSavedDatas(sSavedQuestData savdData);
+	bool		RestoreSavedDatas(sQuestLoadData savdData);
+	 
+	/** Update Quest - udate all tasks and quest state according to the state of all tasks **/
+	void		Update(sQuestUpdateData sData);
 
 	/** Print quest information and status **/
 	void		PrintQuest();
+
+private:
+
+	/** Return true if all of the tasks in a quest is done	**/
+	bool		IsAllTaskDone();
 };

@@ -19,7 +19,7 @@ CQuest::CQuest()
 	Precede_Quest_Id = 0;
 	Follow_Quest_Id = 0;
 
-	State = QUEST_STATE_NONE;
+	State = E_QUEST_STATE::NONE;
 }
 
 CQuest::~CQuest()
@@ -27,7 +27,7 @@ CQuest::~CQuest()
 
 }
 
-bool CQuest::RestoreSavedDatas(sSavedQuestData saveData)
+bool CQuest::RestoreSavedDatas(sQuestLoadData saveData)
 {
 	if (saveData.vec_Task_Ids.size() != Vec_Tasks.size())
 	{
@@ -44,19 +44,73 @@ bool CQuest::RestoreSavedDatas(sSavedQuestData saveData)
 			// Set task state compare current count with target count
 			if(Vec_Tasks[i].GetTargetCount() == Vec_Tasks[i].GetCurrentCount())
 			{
-				Vec_Tasks[i].SetState(TASK_STATE_DONE);
+				Vec_Tasks[i].SetState(E_TASK_STATE::DONE);
 			}
 			else
 			{
-				Vec_Tasks[i].SetState(TASK_STATE_PROCESS);
+				Vec_Tasks[i].SetState(E_TASK_STATE::ACTIVE);
 			}
 		}
 	}
 
-	// Set quest state in progress
-	State = QUEST_STATE_PROCESS;
+	// Set quest state active
+	State = E_QUEST_STATE::ACTIVE;
 
 	return true;
+}
+
+void CQuest::Update(sQuestUpdateData sData)
+{
+	bool bFin = false;
+
+	for(int i=0; i<Vec_Tasks.size(); i++)
+	{
+		if(Vec_Tasks[i].GetActionType() == sData.action \
+			&& Vec_Tasks[i].GetTarget() == sData.target)
+		{
+			Vec_Tasks[i].Update(sData.targetCount, sData.targetCountType);
+		}
+	}
+
+	// Change quest state according to task state
+	// Consider fail condition later
+	if(IsAllTaskDone())
+	{
+		State = E_QUEST_STATE::SUCCESS;
+	}
+
+	// Add Action according to quest state
+	switch (State)
+	{
+	case E_QUEST_STATE::ACTIVE:
+		// nothing to do
+		break;
+	case E_QUEST_STATE::SUCCESS:
+		//// A. if consider only local environment
+		// 1. notice player succeed quest
+		// 2. Add result to player slot
+		// 3. delete quest from the list
+
+
+		//// B. if with network condition 
+		// send result to server 
+		// then change state to send result
+		break;
+	// only for network condition
+	case E_QUEST_STATE::SEND_RESULT:
+		// nothing to do in update state
+		// delete quest from the list after receive result from server
+		break;
+	case E_QUEST_STATE::FAIL:
+		// consider later
+		break;
+	// invalid state for possessed quest
+	case E_QUEST_STATE::NONE:
+	case E_QUEST_STATE::MAX:
+		FUNC_LOG("Invalid quest state: %d", (int)State);
+	default:
+		break;
+	}
 }
 
 void CQuest::PrintQuest()
@@ -67,7 +121,7 @@ void CQuest::PrintQuest()
 
 	for(int i=0; i<Vec_Tasks.size(); i++)
 	{
-		cout << "[Task " << i << ": Task_ID: " << Vec_Tasks[i].GetId() << " / Task_Action: " << Vec_Tasks[i].GetActionType() <<	"/ Task_Target: " << Vec_Tasks[i].GetTarget() 
+		cout << "[Task " << i << ": Task_ID: " << Vec_Tasks[i].GetId() << " / Task_Action: " << (int)Vec_Tasks[i].GetActionType() <<	"/ Task_Target: " << (int)Vec_Tasks[i].GetTarget() 
 			<< "\n/ Task_Target_Count: " << Vec_Tasks[i].GetTargetCount() << " / Task_Crnt_Count: " << Vec_Tasks[i].GetCurrentCount() << " / Task_State: " << Vec_Tasks[i].GetStateString() << " ]" << endl << endl;
 	}
 	
@@ -80,4 +134,20 @@ void CQuest::PrintQuest()
 	cout << "*************************************************************************" << endl;
 
 	cout <<endl;
+}
+
+bool CQuest::IsAllTaskDone()
+{
+	bool bRes = true;
+
+	for (int i = 0; i < Vec_Tasks.size(); i++)
+	{
+		if(Vec_Tasks[i].IsDone() == false)
+		{
+			bRes = false;
+			break;
+		}
+	}
+
+	return bRes;
 }

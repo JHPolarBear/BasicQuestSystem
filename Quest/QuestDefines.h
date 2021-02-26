@@ -3,6 +3,8 @@
 #define BASE_QUEST_DATASET	"Quest/Quest_Table.csv"
 #define SAVE_QUEST_DATA		"Player/Saved_Quest_Data.csv"
 
+#include "Task/TaskDefines.h"
+
 // Maximul count of quest player can hold
 // 플레이거가 가지고 있을 수 있는 최대 퀘스트 갯수
 #define MAX_QUEST_COUNT	25
@@ -49,12 +51,12 @@ struct sTaskData
 
 
 // CSV data format for saved quest data
-struct sSavedQuestData {
+struct sQuestLoadData {
 	int questId;
 	std::vector<int> vec_Task_Ids;
 	std::vector<float> vec_Task_Vals;
 
-	sSavedQuestData()
+	sQuestLoadData()
 	{
 		questId = 0;
 		vec_Task_Ids.clear();
@@ -63,15 +65,44 @@ struct sSavedQuestData {
 
 };
 
-enum QUEST_STATE
+// Structure for quest update input data
+struct sQuestUpdateData
 {
-	QUEST_STATE_NONE,
+	E_TASK_ACTION	action;						// Task action
 
-	QUEST_STATE_PROCESS,
-	QUEST_STATE_SUCCESS,
-	QUEST_STATE_FAIL,
+	E_TASK_TARGET	target;						// Task target
 
-	QUEST_STATE_MAX,
+	float			targetCount;				// amount of target
+
+	E_TASK_TARGET_CNT_TYPE targetCountType;		// way to treat target count (append, update ...)
+
+	sQuestUpdateData()
+	{
+		action = E_TASK_ACTION::NONE;
+		target = E_TASK_TARGET::NONE;
+		targetCount = 0.f;
+		targetCountType = E_TASK_TARGET_CNT_TYPE::NONE;
+	}
+
+	sQuestUpdateData(E_TASK_ACTION _act, E_TASK_TARGET _tgt, float _tgtcnt, E_TASK_TARGET_CNT_TYPE _tgtcnt_type)
+	{
+		action = _act;
+		target = _tgt;
+		targetCount = _tgtcnt;
+		targetCountType = _tgtcnt_type;
+	}
+};
+
+enum class E_QUEST_STATE
+{
+	NONE,
+
+	ACTIVE,			// Quest in progress
+	SUCCESS,		// Success Quest
+	SEND_RESULT,	// On sending result to server
+	FAIL,			// Failed quest
+
+	MAX,
 };
 
 enum class E_ASSIGN_QUEST

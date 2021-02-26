@@ -27,8 +27,18 @@ int main()
 	//	player.PrintQuestList();
 
 	//	Sample code - player notify event to all listener using notify function ( i.e) QuestSystem )
-	sEventListener_Info sInfo;
+	//	Expect that player hunt a wolf
+
+	// Create event
+	CEventListener_Info_Quest* sInfo = new CEventListener_Info_Quest();
+	sInfo->SetTarget(E_TASK_TARGET::MON_WOLF);
+	sInfo->SetTargetCnt(1.f);
+	sInfo->SetTargetCntType(E_TASK_TARGET_CNT_TYPE::APPEND);
+
+	// notify event to quest system
 	player.Notify(E_EVENT_LISTENER_PLAYER_HUNT, sInfo);
+
+	// Sample code - TODO: implement saving current quest data for player in csv file
 	
 	system("pause");
 

@@ -31,7 +31,7 @@ public:
 	// notify occured specific event(i.e: E_EVENT_TYPE) to all registered observers
 	// Add or delete parameters to suit program purpose
 	// 등록된 모든 관찰자에게 이벤트를 알림 (상황에 맞게 파라미터를 추가/삭제하여 사용)
-	void Notify(E_EVENT_LISTENER_TYPE eType, sEventListener_Info sInfo);
+	void Notify(E_EVENT_LISTENER_TYPE eType, CEventListener_Info_Base* sInfo);
 
 protected:
 	// vector to manage observer

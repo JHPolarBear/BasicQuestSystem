@@ -47,7 +47,7 @@ void Subject::Unregister(Observer* _observer)
 	}
 }
 
-void Subject::Notify(E_EVENT_LISTENER_TYPE eType, sEventListener_Info sInfo)
+void Subject::Notify(E_EVENT_LISTENER_TYPE eType, CEventListener_Info_Base* sInfo)
 {
 	vector<Observer*>::iterator _iter = m_vecObserver.begin();
 

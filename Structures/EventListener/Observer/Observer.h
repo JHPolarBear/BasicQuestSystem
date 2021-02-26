@@ -16,7 +16,7 @@ public:
 
 	// Handling events passed from subject class
 	// Format of parameters should be same with Subject::Notify(...)
-	virtual void onNotify(E_EVENT_LISTENER_TYPE etype, sEventListener_Info sInfo) = 0;
+	virtual void onNotify(E_EVENT_LISTENER_TYPE etype, CEventListener_Info_Base* sInfo) = 0;
 
 private:
 };

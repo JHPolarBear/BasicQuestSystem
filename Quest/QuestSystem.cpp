@@ -65,12 +65,21 @@ void CQuestSystem::PrintQuestList()
 	m_questManager->PrintQuestList();
 }
 
-void CQuestSystem::onNotify(E_EVENT_LISTENER_TYPE etype, sEventListener_Info sInfo)
+void CQuestSystem::onNotify(E_EVENT_LISTENER_TYPE etype, CEventListener_Info_Base* sInfo)
 {
 	if (!CheckManager())
 		return;
 
-	m_questManager->UpdateQuest(etype,  sInfo);
+	sQuestUpdateData sData;
+
+	CEventListener_Info_Quest* sEL_Quest_Data = (CEventListener_Info_Quest*)sInfo;
+
+	sData.action = ConvertEventTypeToTaskAction(etype);
+	sData.target = (E_TASK_TARGET)sEL_Quest_Data->GetTarget();
+	sData.targetCount = sEL_Quest_Data->GetTargetCnt();
+	sData.targetCountType = sEL_Quest_Data->GetTargetCntType();
+
+	m_questManager->UpdateQuest(sData);
 }
 
 bool CQuestSystem::CheckManager()
@@ -83,4 +92,31 @@ bool CQuestSystem::CheckManager()
 	}
 
 	return true;
+}
+
+E_TASK_ACTION CQuestSystem::ConvertEventTypeToTaskAction(E_EVENT_LISTENER_TYPE eType)
+{
+	E_TASK_ACTION action;
+
+	switch (eType)
+	{
+	case E_EVENT_LISTENER_NONE:
+		action = E_TASK_ACTION::NONE;
+		break;
+	case E_EVENT_LISTENER_PLAYER_HUNT:
+		action = E_TASK_ACTION::HUNT;
+		break;
+	case E_EVENT_LISTENER_PLAYER_REACH:
+		action = E_TASK_ACTION::REACH;
+		break;
+	case E_EVENT_LISTENER_PLAYER_COLLECT:
+		action = E_TASK_ACTION::COLLECT;
+		break;
+	case E_EVENT_LISTENER_MAX:		
+	default:
+		action = E_TASK_ACTION::NONE;
+		break;
+	}
+
+	return action;
 }

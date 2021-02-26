@@ -30,7 +30,7 @@ public:
 	E_ASSIGN_QUEST AssignQuest(int _id);
 
 	/**	Update quest **/
-	void UpdateQuest(E_EVENT_LISTENER_TYPE etype, sEventListener_Info sInfo);
+	void UpdateQuest(sQuestUpdateData sData);
 
 	/** return true if player have quest with id '_id' **/
 	bool IsQuestExist(int _id);
@@ -63,7 +63,7 @@ private:
 	std::vector<CQuest> Vec_Quests;
 
 	/** Read Quest save file(csv)**/
-	bool ReadSavedFile(std::vector<sSavedQuestData>& vecQuestDataList, std::string strPath = SAVE_QUEST_DATA);
+	bool ReadSavedFile(std::vector<sQuestLoadData>& vecQuestDataList, std::string strPath = SAVE_QUEST_DATA);
 
 	/****	Sample Specified Variable	****/
 	/**	Save player class to user property from the player **/

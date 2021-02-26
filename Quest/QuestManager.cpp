@@ -36,7 +36,7 @@ void CQuestManager::Initialize()
 
 bool CQuestManager::LoadLocalSavedData()
 {
-	std::vector<sSavedQuestData> vecQuestDataList;
+	std::vector<sQuestLoadData> vecQuestDataList;
 
 	//Read Saved File
 	if(ReadSavedFile(vecQuestDataList) == false)
@@ -93,16 +93,19 @@ E_ASSIGN_QUEST CQuestManager::AssignQuest(int _id)
 	}
 
 	// Change quest state in progress
-	newQuest.SetState(QUEST_STATE_PROCESS);
+	newQuest.SetState(E_QUEST_STATE::ACTIVE);
 
 	Vec_Quests.push_back(newQuest);
 
 	return E_ASSIGN_QUEST::SUCCESS;
 }
 
-void CQuestManager::UpdateQuest(E_EVENT_LISTENER_TYPE etype, sEventListener_Info sInfo)
+void CQuestManager::UpdateQuest(sQuestUpdateData sData)
 {
-
+	for(int i=0; i<Vec_Quests.size(); i++)
+	{
+		Vec_Quests[i].Update(sData);
+	}
 }
 
 bool CQuestManager::IsQuestExist(int _id)
@@ -155,7 +158,7 @@ bool CQuestManager::SetPlayer(CPlayer* player)
 	}
 }
 
-bool CQuestManager::ReadSavedFile(std::vector<sSavedQuestData>& vecQuestDataList, std::string strPath /*= SAVE_QUEST_DATA*/)
+bool CQuestManager::ReadSavedFile(std::vector<sQuestLoadData>& vecQuestDataList, std::string strPath /*= SAVE_QUEST_DATA*/)
 {
 	// <count> means number of columns in data table 
 	io::CSVReader<4> in(strPath.c_str());
@@ -173,7 +176,7 @@ bool CQuestManager::ReadSavedFile(std::vector<sSavedQuestData>& vecQuestDataList
 
 	while (in.read_row(usercode, qId, tasks_ids, tasks_vals)	)
 	{
-		sSavedQuestData saveData;
+		sQuestLoadData saveData;
 
 		// pass if usercode saved in file is not equal to current player's usercode.
 		if(usercode != Parent->GetUserCode())

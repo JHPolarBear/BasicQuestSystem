@@ -20,10 +20,10 @@ private:
 	std::string desc;
 
 	/** Action Type **/
-	TASK_ACTION actionType;
+	E_TASK_ACTION actionType;
 
 	/** Target of Action	**/
-	TASK_TARGET target;
+	E_TASK_TARGET target;
 
 	/** Count to accomplish task **/
 	float		targetCount;
@@ -32,7 +32,7 @@ private:
 	float		currentCount;
 
 	/** state of task **/
-	TASK_STATE State;
+	E_TASK_STATE State;
 
 public:
 	CTask();
@@ -41,9 +41,9 @@ public:
 
 
 	// Return whether task is done
-	bool IsDone()		{return State == TASK_STATE_DONE;}
+	bool IsDone()		{return State == E_TASK_STATE::DONE;}
 
-	void Update();
+	void Update(float _inputcnt, E_TASK_TARGET_CNT_TYPE _tgtcnt_type);
 
 
 	/****	Getter && Setter	****/
@@ -53,11 +53,11 @@ public:
 	void			SetDesc(std::string _desc)	{desc = _desc;}
 	std::string		GetDesc()					{return desc;}
 
-	void			SetActionType(TASK_ACTION _actType)		{actionType = _actType;}
-	TASK_ACTION		GetActionType()							{return actionType;}
+	void			SetActionType(E_TASK_ACTION _actType)		{actionType = _actType;}
+	E_TASK_ACTION		GetActionType()							{return actionType;}
 
-	void			SetTarget(TASK_TARGET _tgt)				{target = _tgt;}
-	TASK_TARGET		GetTarget()								{return target;}
+	void			SetTarget(E_TASK_TARGET _tgt)				{target = _tgt;}
+	E_TASK_TARGET		GetTarget()								{return target;}
 
 	void			SetTargetCount(float _tgtCnt)			{targetCount = _tgtCnt;}
 	float			GetTargetCount()						{return targetCount;}
@@ -65,7 +65,7 @@ public:
 	void			SetCurrentCount(float _cnt)				{currentCount = _cnt;}
 	float			GetCurrentCount()						{return currentCount;}
 
-	void			SetState(TASK_STATE _state)			{State = _state;}
-	TASK_STATE		GetState()							{return State;}
+	void			SetState(E_TASK_STATE _state)			{State = _state;}
+	E_TASK_STATE		GetState()							{return State;}
 	std::string		GetStateString();
 };
