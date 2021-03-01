@@ -105,19 +105,49 @@ void CQuestManager::UpdateQuest(sQuestUpdateData sData)
 	vector<CQuest>::iterator _iter = Vec_Quests.begin();
 
 	// Update all of the quest that manager has
-	while(_iter != Vec_Quests.end())
+	while (_iter != Vec_Quests.end())
 	{
 		(*_iter).Update(sData);
 
+		_iter++;
+	}
+
+	_iter = Vec_Quests.begin();
+	for(_iter; _iter != Vec_Quests.end();)
+	{
 		// show result and delete from the list if the quest succeeded after update
 		if((*_iter).GetState() == E_QUEST_STATE::SUCCESS)
 		{
 			// Show the result of the quest
-			FUNC_LOG("Complete Quest \"%s\", Quest ID: %d", (*_iter).GetTitle(), (*_iter).GetId());
+			FUNC_LOG("Complete Quest \"%s\", Quest ID: %d", (*_iter).GetTitle().c_str(), (*_iter).GetId());
+
+			int nextQuestID = INVALID_QUEST_ID;
+
+			// get the following quest if exists
+			if((*_iter).GetFollowQuestId() != 0)
+			{
+				nextQuestID = (*_iter).GetFollowQuestId();
+				
+			}
 
 			// delete from the list
 			// consider moving succeeded quest to separate list that manages the completed quests.
-			Vec_Quests.erase(_iter);
+			_iter = Vec_Quests.erase(_iter);
+
+			// create next quest if exists
+			if(nextQuestID != INVALID_QUEST_ID)
+			{
+				CQuest nextQuest = CreateQuest(nextQuestID);
+
+				if (nextQuest.GetId() != INVALID_QUEST_ID)
+				{
+					nextQuest.SetState(E_QUEST_STATE::ACTIVE);
+
+					Vec_Quests.push_back(nextQuest);
+
+					FUNC_LOG("Create following quest \"%s\" (Quest ID: %d)", nextQuest.GetTitle().c_str(), nextQuest.GetId());
+				}			
+			}		
 		}
 		else
 		{
@@ -170,7 +200,7 @@ void CQuestManager::PrintQuestList()
 {
 	for(int i=0; i<Vec_Quests.size(); i++)
 	{
-		cout << "Quest No." << i << endl;
+		cout << "Quest No." << i+1 << endl;
 		Vec_Quests[i].PrintQuest();
 	}
 }

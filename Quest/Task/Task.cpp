@@ -10,7 +10,7 @@ CTask::CTask()
 
 	actionType = E_TASK_ACTION::NONE;
 
-	target = E_TASK_TARGET::NONE;
+	target = E_TASK_TARGET::MON_NONE;
 
 	targetCount = _TASK_COUNT_MAX;
 

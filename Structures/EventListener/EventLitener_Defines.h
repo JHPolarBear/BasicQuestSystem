@@ -40,7 +40,7 @@ class CEventListener_Info_Quest : public CEventListener_Info_Base
 public:
 	CEventListener_Info_Quest()
 	{
-		Target = E_TASK_TARGET::NONE;
+		Target = E_TASK_TARGET::MON_NONE;
 		Target_Cnt = 0.f;
 
 		Target_Cnt_Type = E_TASK_TARGET_CNT_TYPE::NONE;

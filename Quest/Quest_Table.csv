@@ -1,7 +1,8 @@
 ID,TITLE,TASK_ACTS,TASK_TGTS,TASK_CNTS,REWARD_IDS,REWARD_CNTS,PRECEDE_QID,FOLLOW_QID
-101,Hunt wolves,1,12,5,1,100,,
-102,Hunt goblin,1,14,10,2,25,101,102
-103,Collect Apple,2,45,10,1 2,150 10,,
-104,Go to new town,3,24,1,4,10,,
-105,Clear mystery cave,1 1,12 14,10 10,1,2500,,
-106,Collect ingredient for bread,2 2,45 46,5 5,2 50,20 15,,
+101,Hunt wolves,1,1,5,1,100,,107
+102,Hunt goblin,1,2,10,2,25,101,102
+103,Collect Apple,2,1002,10,1 2,150 10,,
+104,Go to new town,3,5001,1,4,10,,
+105,Clear mystery cave,1 1,1 2,10 10,1,2500,,
+106,Collect ingredient for bread,2 2,1003 1004,5 5,2 50,20 15,,
+107,Collect bones,2,1001,5,1,100,,

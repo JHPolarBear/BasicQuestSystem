@@ -79,7 +79,7 @@ struct sQuestUpdateData
 	sQuestUpdateData()
 	{
 		action = E_TASK_ACTION::NONE;
-		target = E_TASK_TARGET::NONE;
+		target = E_TASK_TARGET::MON_NONE;
 		targetCount = 0.f;
 		targetCountType = E_TASK_TARGET_CNT_TYPE::NONE;
 	}

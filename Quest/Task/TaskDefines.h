@@ -9,9 +9,9 @@ enum class E_TASK_ACTION
 {
 	NONE,
 
-	HUNT,		// hunt target monster
-	REACH,		// move to target point
+	HUNT,		// hunt target monster	
 	COLLECT,	// collect target item
+	REACH,		// move to target point
 
 	MAX
 };
@@ -42,17 +42,21 @@ enum class E_TASK_STATE
 /** Target of task **/
 enum class E_TASK_TARGET
 {
-	NONE,
-
 	// Target for hunt
-	MON_WOLF,
+	MON_NONE = 0,
+	MON_WOLF = 1,
 	MON_GOBLIN,
 
 	// Target for collect
-	ITEM_BONE,
+	ITEM_NONE = 1000,
+	ITEM_BONE = 1001,
+	ITEM_APPLE = 1002,
+	ITEM_FLOUR = 1003,
+	ITEM_BUTTER = 1004,
 
 	// Target for reach point
-	LOC_TOWN_1,
+	LOC_NONE = 5000,
+	LOC_TOWN_1 = 5001,
 
 	MAX
 };

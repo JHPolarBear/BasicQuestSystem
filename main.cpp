@@ -24,10 +24,13 @@ int main()
 	player.AssignQuest(103);
 
 	//	Test Code - Print quest list player load
-	//	player.PrintQuestList();
+	player.PrintQuestList();
 
 	//	Sample code - player notify event to all listener using notify function ( i.e) QuestSystem )
 	//	Expect that player hunt a wolf
+
+	system("pause");
+	cout << endl;
 
 	// Create event
 	CEventListener_Info_Quest* sInfo = new CEventListener_Info_Quest();
@@ -37,6 +40,9 @@ int main()
 
 	// notify event to quest system
 	player.Notify(E_EVENT_LISTENER_PLAYER_HUNT, sInfo);
+
+	//	Test Code - Print quest list player load after update
+	player.PrintQuestList();
 
 	// Sample code - TODO: implement saving current quest data for player in csv file
 	
