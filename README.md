@@ -6,9 +6,9 @@
 - This Project runs on **Visual studio 2019**.
 - 
 ## Features
-- Quest system reads quest data table from csv file (Quest/Quest_Table.csv), and create quest dictionary.
+- Quest system reads quest data table from **csv** file (Quest/Quest_Table.csv), and create quest dictionary.
 
--  Player's quest record is saved in csv file.
+-  Player's quest record is saved in **csv** file.
 
 - Adopt **Observer pattern** to build quest system to interaction with player.
 	-- By setting player as a "Subject" and quest system as an "Observer", 
