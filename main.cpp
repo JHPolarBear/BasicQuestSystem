@@ -24,7 +24,7 @@ int main()
 	player.AssignQuest(103);
 
 	//	Test Code - Print quest list player load
-	player.PrintQuestList();
+	//player.PrintQuestList();
 
 	//	Sample code - player notify event to all listener using notify function ( i.e) QuestSystem )
 	//	Expect that player hunt a wolf
@@ -42,7 +42,7 @@ int main()
 	player.Notify(E_EVENT_LISTENER_PLAYER_HUNT, sInfo);
 
 	//	Test Code - Print quest list player load after update
-	player.PrintQuestList();
+	//player.PrintQuestList();
 
 	// Sample code - TODO: implement saving current quest data for player in csv file
 	
