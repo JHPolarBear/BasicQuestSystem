@@ -102,10 +102,43 @@ E_ASSIGN_QUEST CQuestManager::AssignQuest(int _id)
 
 void CQuestManager::UpdateQuest(sQuestUpdateData sData)
 {
+	vector<CQuest>::iterator _iter = Vec_Quests.begin();
+
+	// Update all of the quest that manager has
+	while(_iter != Vec_Quests.end())
+	{
+		(*_iter).Update(sData);
+
+		// show result and delete from the list if the quest succeeded after update
+		if((*_iter).GetState() == E_QUEST_STATE::SUCCESS)
+		{
+			// Show the result of the quest
+			FUNC_LOG("Complete Quest \"%s\", Quest ID: %d", (*_iter).GetTitle(), (*_iter).GetId());
+
+			// delete from the list
+			// consider moving succeeded quest to separate list that manages the completed quests.
+			Vec_Quests.erase(_iter);
+		}
+		else
+		{
+			_iter++;
+		}
+	}
+
+	
 	for(int i=0; i<Vec_Quests.size(); i++)
 	{
 		Vec_Quests[i].Update(sData);
+
+		// show result and delete from the list if the quest succeeded after update
+		if(Vec_Quests[i].GetState() == E_QUEST_STATE::SUCCESS)
+		{
+			
+		}
 	}
+
+	
+
 }
 
 bool CQuestManager::IsQuestExist(int _id)
