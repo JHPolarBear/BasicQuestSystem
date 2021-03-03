@@ -6,11 +6,11 @@
 - This Project runs on **Visual studio 2019**.
 
 ## Features
-- The Quest system(Quest Manager) is largely composed of a quest list that manages user's actual quests<br>and a quest data table that defines the functions to be performed by quests.
+- The Quest system(Quest Manager) is largely composed of a quest list that manages user's quest records<br>and a quest data table that defines the functions to be performed by quests.
 
 - Quest system reads quest data table from **csv** file (Quest/Quest_Table.csv), and create quest dictionary.
 
--  Player's quest record is saved in **csv** file.
+-  Player's quest records are saved in **csv** file and restored by quest data table.
 
 - Adopt **Observer pattern** to build quest system to interaction with player.
 	- By setting player as a "Subject" and quest system as an "Observer", 
