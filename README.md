@@ -10,7 +10,7 @@
 
 - Quest system reads quest data table from **csv** file (Quest/Quest_Table.csv), and create quest dictionary.
 
--  Player's quest records are saved in **csv** file and restored by quest data table.
+-  Player's quest records are saved in **csv** file and restored using quest data table.
 
 - Adopt **Observer pattern** to build quest system to interaction with player.
 	- By setting player as a "Subject" and quest system as an "Observer", 
