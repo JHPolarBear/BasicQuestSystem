@@ -6,7 +6,7 @@
 - This Project runs on **Visual studio 2019**.
 
 ## Features
-- The Quest system(Quest Manager) is largely composed of a quest list that manages a user's quest<br>and a quest data table that defines the functions to be performed by quests.
+- The Quest system(Quest Manager) is largely composed of a quest list that manages user's actual quests<br>and a quest data table that defines the functions to be performed by quests.
 
 - Quest system reads quest data table from **csv** file (Quest/Quest_Table.csv), and create quest dictionary.
 
