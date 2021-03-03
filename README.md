@@ -14,7 +14,10 @@
 	-- By setting player as a "Subject" and quest system as an "Observer", 
 	-- When player takes an action ( i.e. hunting monster ), it  sends notification to quest system<br>and the system handles  the notification ( i.e. adding hunt count).
 
+- Quest System Hierarchy
+  ![ex_screenshot](./Quest_Diagram.png)
 - Quest consists of several tasks, and quest is completed when all tasks in the quest are completed.
+
 
 
 ## External Source
