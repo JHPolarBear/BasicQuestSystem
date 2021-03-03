@@ -6,6 +6,8 @@
 - This Project runs on **Visual studio 2019**.
 
 ## Features
+- The Quest system(Quest Manager) is largely composed of a quest list that manages a user's quest<br>and a quest data table that defines the functions to be performed by quests.
+- 
 - Quest system reads quest data table from **csv** file (Quest/Quest_Table.csv), and create quest dictionary.
 
 -  Player's quest record is saved in **csv** file.
@@ -18,7 +20,7 @@
 <br>![ex_screenshot](./Quest_Diagram.png)
 	- Task is an unit of work for quest to be completed
 	- Quest consists of several tasks, and quest is completed when all tasks in the quest are completed.
-	- Quest Manager holds list of quests and manage status of the quests with input.
+	- Quest Manager holds list of quests and manage status of the quests with input(i.e. notification from player).
 ## External Source
 - [CSV Reader] ben-strasser/fast-cpp-csv-parser: https://github.com/ben-strasser/fast-cpp-csv-parser
 
