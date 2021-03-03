@@ -11,8 +11,8 @@
 -  Player's quest record is saved in **csv** file.
 
 - Adopt **Observer pattern** to build quest system to interaction with player.
-	-- By setting player as a "Subject" and quest system as an "Observer", 
-	-- When player takes an action ( i.e. hunting monster ), it  sends notification to quest system<br>and the system handles  the notification ( i.e. adding hunt count).
+	- By setting player as a "Subject" and quest system as an "Observer", 
+	- When player takes an action ( i.e. hunting monster ), it  sends notification to quest system<br>and the system handles  the notification ( i.e. adding hunt count).
 
 - Quest System Hierarchy
 <br>![ex_screenshot](./Quest_Diagram.png)
