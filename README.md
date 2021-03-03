@@ -16,7 +16,7 @@
 
 - Quest System Hierarchy
 <br>![ex_screenshot](./Quest_Diagram.png)
-&nbsp- Task is an unit of work for quest to be completed
+&nbsp - Task is an unit of work for quest to be completed
 - Quest consists of several tasks, and quest is completed when all tasks in the quest are completed.
 - Quest Manager holds list of quests and manage status of the quests with input.
 
