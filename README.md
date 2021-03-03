@@ -19,8 +19,5 @@
 	- Task is an unit of work for quest to be completed
 	- Quest consists of several tasks, and quest is completed when all tasks in the quest are completed.
 	- Quest Manager holds list of quests and manage status of the quests with input.
-
-
-
 ## External Source
 - [CSV Reader] ben-strasser/fast-cpp-csv-parser: https://github.com/ben-strasser/fast-cpp-csv-parser
