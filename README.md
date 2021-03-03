@@ -4,7 +4,7 @@
 ## Introduction
 - Simple quest system template written in c++.
 - This Project runs on **Visual studio 2019**.
-- 
+
 ## Features
 - Quest system reads quest data table from **csv** file (Quest/Quest_Table.csv), and create quest dictionary.
 
