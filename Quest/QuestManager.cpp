@@ -221,7 +221,7 @@ bool CQuestManager::SetPlayer(CPlayer* player)
 	}
 }
 
-bool CQuestManager::ReadSavedFile(std::vector<sQuestLoadData>& vecQuestDataList, std::string strPath /*= SAVE_QUEST_DATA*/)
+bool CQuestManager::ReadSavedFile(std::vector<sQuestLoadData>& vecQuestDataList, std::string strPath /*= SAVED_QUEST_DATA*/)
 {
 	// <count> means number of columns in data table 
 	io::CSVReader<4> in(strPath.c_str());

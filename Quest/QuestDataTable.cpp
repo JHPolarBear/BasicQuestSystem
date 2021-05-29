@@ -59,8 +59,9 @@ bool CQuestDataTable::ReadDataTable()
 	// <count> means number of columns in data table 
 	io::CSVReader<9> in(BASE_QUEST_DATASET);
 
-	in.read_header(io::ignore_extra_column, "ID", "TITLE", "TASK_ACTS", "TASK_TGTS", "TASK_CNTS", \
-		"REWARD_IDS", "REWARD_CNTS", "PRECEDE_QID", "FOLLOW_QID");
+	in.read_header(io::ignore_extra_column, DATASET_HEADER_ID, DATASET_HEADER_TITLE, \
+	DATASET_HEADER_TASK_ACTS, DATASET_HEADER_TASK_TGTS, DATASET_HEADER_TASK_CNTS, \
+		DATASET_HEADER_REWARD_IDS, DATASET_HEADER_REWARD_CNTS, DATASET_HEADER_PRECEDE_QID, DATASET_HEADER_FOOLW_QID);
 
 	// Quest Id
 	int quest_id;

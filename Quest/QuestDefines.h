@@ -1,7 +1,7 @@
 #pragma once
 
 #define BASE_QUEST_DATASET	"Quest/Quest_Table.csv"
-#define SAVE_QUEST_DATA		"Player/Saved_Quest_Data.csv"
+#define SAVED_QUEST_DATA		"Player/Saved_Quest_Data.csv"
 
 #include "Task/TaskDefines.h"
 
@@ -11,6 +11,17 @@
 
 // Invalid Quest ID ( used to initialiaze CQuest information)
 #define INVALID_QUEST_ID	0
+
+// Quest data csv headers
+#define DATASET_HEADER_ID			"ID"
+#define DATASET_HEADER_TITLE		"TITLE"
+#define DATASET_HEADER_TASK_ACTS	"TASK_ACTS"
+#define DATASET_HEADER_TASK_TGTS	"TASK_TGTS"
+#define DATASET_HEADER_TASK_CNTS	"TASK_CNTS"
+#define DATASET_HEADER_REWARD_IDS	"REWARD_IDS"
+#define DATASET_HEADER_REWARD_CNTS	"REWARD_CNTS"
+#define DATASET_HEADER_PRECEDE_QID	"PRECEDE_QID"
+#define DATASET_HEADER_FOOLW_QID	"FOLLOW_QID"
 
 // structure for quest reward
 struct sReward

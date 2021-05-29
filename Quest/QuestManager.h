@@ -63,7 +63,7 @@ private:
 	std::vector<CQuest> Vec_Quests;
 
 	/** Read Quest save file(csv)**/
-	bool ReadSavedFile(std::vector<sQuestLoadData>& vecQuestDataList, std::string strPath = SAVE_QUEST_DATA);
+	bool ReadSavedFile(std::vector<sQuestLoadData>& vecQuestDataList, std::string strPath = SAVED_QUEST_DATA);
 
 	/****	Sample Specified Variable	****/
 	/**	Save player class to user property from the player **/
