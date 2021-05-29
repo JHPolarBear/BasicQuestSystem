@@ -43,9 +43,7 @@ int main()
 
 	//	Test Code - Print quest list player load after update
 	//player.PrintQuestList();
-
-	// Sample code - TODO: implement saving current quest data for player in csv file
-	
+		
 	system("pause");
 
 	return 0;
