@@ -29,12 +29,15 @@ CQuest::~CQuest()
 
 bool CQuest::RestoreSavedDatas(sQuestLoadData saveData)
 {
+	// 세이브 데이터의 Task 항목과 실제 퀘스트의 Task 갯수가 일치하지 않는 경우 복구 실패
 	if (saveData.vec_Task_Ids.size() != Vec_Tasks.size())
 	{
 		EXT_LOG("Save data's task size not matched with Vec_Task");
 		return false;
 	}
 
+	// 세이브 데이터에 기록된 테스트 ID와 일치하는 Task 항목이 있는 경우
+	// 해당 Task 달성 기록을 복구한다
 	for(int i=0; i<saveData.vec_Task_Ids.size(); i++)
 	{
 		if(saveData.vec_Task_Ids[i] == Vec_Tasks[i].GetId())
@@ -54,6 +57,7 @@ bool CQuest::RestoreSavedDatas(sQuestLoadData saveData)
 	}
 
 	// Set quest state active
+	// 퀘스트 상태 활성화
 	State = E_QUEST_STATE::ACTIVE;
 
 	return true;

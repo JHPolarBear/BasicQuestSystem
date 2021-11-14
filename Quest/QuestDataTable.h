@@ -19,23 +19,31 @@ public:
 
 private:
 	/** Quest ID - Every Quest has unique ID **/
+	/** 퀘스트 ID - 모든 퀘스트는 고유한 ID를 보유 **/
 	int Id;
 
 	/** Title of the quest **/
+	/** 퀘스트 제목 **/
 	std::string Title;
 
 	/** List of tasks to be accomplished to complete quest **/
+	/**	퀘스트를 달성하기 위해 수행해야 하는 작업들 **/
 	std::vector<sTaskData> Vec_TaskDatas;
 
 	/** List of Rewards given when quest is done **/
+	/**	퀘스트를 완료 시 주어지는 보상들의 목록 **/
 	std::vector<sReward> Vec_Rewards;
 
 	/** Quest that must precede the current quest 
-		0 if precede quest not exists		**/			 
+		0 if precede quest not exists		**/		
+	/**	현재 퀘스트의 선행 퀘스트 ID
+		만약 선행 퀘스트가 없는 경우 0으로 세팅 **/
 	int Precede_Quest_Id;
 
 	/** Quests that must follow the current quest
 		0 if following quest not exists		**/			
+	/**	현재 퀘스트 완료 시 다음으로 이어지는 퀘스트 ID
+		만약 다음 퀘스트가 없는 경우 0으로 세팅 **/
 	int Follow_Quest_Id;
 
 

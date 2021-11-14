@@ -94,6 +94,7 @@ bool CQuestDataTable::ReadDataTable()
 	// follow Quest Id
 	int FollowQId;
 
+	// CSV에 존재하는 모든 퀘스트 행을 읽어들여 CQuestData를 생성한 후 Dictionary에 저장
 	while (in.read_row(quest_id, quest_title, task_acts, task_tgts, task_cnts, reward_ids, reward_cnts, PrecedeQId, FollowQId))
 	{
 		CQuestData NewQuestData;
