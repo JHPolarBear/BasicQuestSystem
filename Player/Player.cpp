@@ -37,7 +37,8 @@ CPlayer::CPlayer(int _usercode)
 
 CPlayer::~CPlayer()
 {
-
+	if(QuestSystem != nullptr)
+		delete QuestSystem;
 }
 
 bool CPlayer::LoadLocalSavedData()

@@ -154,21 +154,6 @@ void CQuestManager::UpdateQuest(sQuestUpdateData sData)
 			_iter++;
 		}
 	}
-
-	
-	for(int i=0; i<Vec_Quests.size(); i++)
-	{
-		Vec_Quests[i].Update(sData);
-
-		// show result and delete from the list if the quest succeeded after update
-		if(Vec_Quests[i].GetState() == E_QUEST_STATE::SUCCESS)
-		{
-			
-		}
-	}
-
-	
-
 }
 
 bool CQuestManager::IsQuestExist(int _id)

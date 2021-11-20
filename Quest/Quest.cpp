@@ -66,6 +66,7 @@ bool CQuest::RestoreSavedDatas(sQuestLoadData saveData)
 void CQuest::Update(sQuestUpdateData sData)
 {
 	bool bFin = false;
+	bool bUpdated = false;
 
 	for(int i=0; i<Vec_Tasks.size(); i++)
 	{
@@ -73,6 +74,7 @@ void CQuest::Update(sQuestUpdateData sData)
 			&& Vec_Tasks[i].GetTarget() == sData.target)
 		{
 			Vec_Tasks[i].Update(sData.targetCount, sData.targetCountType);
+			bUpdated = true;
 		}
 	}
 
@@ -88,6 +90,10 @@ void CQuest::Update(sQuestUpdateData sData)
 	{
 	case E_QUEST_STATE::ACTIVE:
 		// nothing to do
+
+		// print quest status for debug
+		if(bUpdated)
+			PrintQuest();
 		break;
 	case E_QUEST_STATE::SUCCESS:
 		//// A. if consider only local environment
@@ -99,6 +105,10 @@ void CQuest::Update(sQuestUpdateData sData)
 		//// B. if with network condition 
 		// send result to server 
 		// then change state to send result
+
+		// print quest status for debug
+		PrintQuest();
+
 		break;
 	// only for network condition
 	case E_QUEST_STATE::SEND_RESULT:
@@ -119,7 +129,7 @@ void CQuest::Update(sQuestUpdateData sData)
 
 void CQuest::PrintQuest()
 {
-	cout << "*************************************************************************" << endl;
+	cout << endl << "*************************************************************************" << endl;
 	cout << "[Quest ID: " << GetId() << " / Quest Title: " << GetTitle() << " ]" << endl;
 	cout << "[Precede Quest ID: " << GetPrecedeQuestId() << " / Follow Quest ID: " << GetFollowQuestId() << " ]" << endl << endl;
 
